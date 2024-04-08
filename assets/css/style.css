@@ -54,3 +54,30 @@ p {
         scroll-padding-top: 3rem;
     }
 }
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.wrapper article {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wrapper img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    transition: ease-in-out 500ms;
+    border-radius: 50%;
+}
+
+.wrapper img:hover {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    transition: ease-in-out 500ms;
+}
