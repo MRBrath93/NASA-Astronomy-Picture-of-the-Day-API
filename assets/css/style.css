@@ -1,0 +1,56 @@
+/* Variables */
+:root {
+    --DarkGrey: #a5A5A5;
+    /* Angiv vairabler så som farver, størrelser på margin, padding osv. */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    color-scheme: dark light;
+}
+
+body {
+    height: 100svh;
+    /* Small viewport height */
+}
+
+img,
+video,
+picture,
+svg {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+}
+
+/* Typografi */
+@import url("");
+/* Tilføj googlefonts url til fonte */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+p {
+    max-width: 75ch;
+    text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+        scroll-behavior: smooth;
+        scroll-padding-top: 3rem;
+    }
+}
