@@ -18,6 +18,13 @@ html {
 body {
     height: 100svh;
     /* Small viewport height */
+    background-image: url(../img/COLOURBOX12517762.jpg);
+    background-size: contain;
+    height: 100%;
+    color: white;
+    line-height: 27px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 img,
@@ -31,21 +38,59 @@ svg {
 }
 
 /* Typografi */
-@import url("");
-/* Tilføj googlefonts url til fonte */
+@import url("https://use.typekit.net/qhh8occ.css");
 
-h1,
-h2,
+
+h1 {
+    font-family: "nasalization", sans-serif;
+    font-size: 80px;
+    background-color: rgb(29, 62, 141);
+    padding: 3rem 4rem;
+
+    text-decoration: underline rgb(217, 33, 20);
+    text-align: center;
+}
+
+h2 {
+    text-wrap: balance;
+    text-align: center;
+    margin-top: 3rem;
+}
+
 h3,
 h4,
 h5,
 h6 {
     text-wrap: balance;
+    text-align: center;
+
 }
 
 p {
     max-width: 75ch;
     text-wrap: pretty;
+}
+
+#dateCalender {
+    padding: 1rem;
+    margin: 0 50%;
+    margin-top: 50px;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    border: rgb(217, 33, 20) 2px solid;
+    background-color: rgb(29, 62, 141);
+    color: white;
+    font-family: "nasalization", sans-serif;
+    font-size: 1rem;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-image: url(../img/calendar-regular.png);
+    margin-left: 15px;
+    padding-bottom: 0.5rem;
+    height: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -57,27 +102,38 @@ p {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
     gap: 2rem;
+    margin: 0rem 3rem;
 }
 
 .wrapper article {
+    grid-column: 2;
     display: flex;
+    gap: 2rem;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: rgb(29, 62, 141, 0.805);
+    border-radius: 12px;
+    padding: 0rem 2rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
 .wrapper img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
+    width: 300px;
     transition: ease-in-out 500ms;
-    border-radius: 50%;
 }
 
-.wrapper img:hover {
-    width: 500px;
-    height: 500px;
-    object-fit: cover;
-    transition: ease-in-out 500ms;
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    text-align: center;
+    font-family: "nasalization", sans-serif;
+    font-size: 0.5rem;
 }
