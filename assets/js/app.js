@@ -5,19 +5,26 @@ const wrapperEl = document.querySelector(".wrapper");
 // Skaber en variabel som skal anvendes senere og derfor skal ligge tilgængeligt så det kan anvendes flere steder
 let imageData;
 
-// Vi skaber en asynkron funktion kaldet "fetchNasaStuff". 
-async function fetchNasaData() {
-    // Vi sender en request til vores url om at få noget data.
-    const res = await fetch(url);
-    // Vi får en respons fra vores url/API som gemmes i variablen data.
-    const data = await res.json();
-    // Vi gemmer nu vores data i den variable som vi oprettede ovenfor. dette gør vi for at vi kan anvende vores data til at filtrer senere.
-    imageData = data;
-    // Sender vores data videre til funktionen renderApodImages
-    renderApodImages(data);
-}
-// Køre vores funktion
-fetchNasaData();
+// // Vi skaber en asynkron funktion kaldet "fetchNasaStuff". 
+// async function fetchNasaData() {
+//     // Vi sender en request til vores url om at få noget data.
+//     const res = await fetch(url);
+//     // Vi får en respons fra vores url/API som gemmes i variablen data.
+//     const data = await res.json();
+//     // Vi gemmer nu vores data i den variable som vi oprettede ovenfor. dette gør vi for at vi kan anvende vores data til at filtrer senere.
+//     imageData = data;
+//     // Sender vores data videre til funktionen renderApodImages
+//     renderApodImages(data);
+// }
+// // Køre vores funktion
+// fetchNasaData();
+fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        imageData = data; // Gem dataene i variablen fetchedData
+        renderApodImages(data); // Eventuel logik til at håndtere dataene
+    })
+    .catch(err => console.log("Ups noget gik galt....", err));
 
 
 // Skaber vores funktion renderApodImages
